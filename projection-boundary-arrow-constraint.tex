@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{authblk}
+\usepackage{enumitem}
+\usepackage{placeins}
+\usepackage{tikz}
+\usepackage[numbers]{natbib}
+\usepackage{tabularx}
+\usepackage{array}
+
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\setlist{nosep}
+
+% ---------- Hyperref ----------
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+% ---------- Theorem Environments ----------
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+% ---------- Metadata ----------
+\title{Inevitability of Projection-Induced Arrows:\\
+Arrow-Like Directedness as Boundary-Radial Fallout of Symmetric Admissible Dynamics}
+
+\author[1]{A.\ R.\ Wells}
+\affil[1]{Dual-Frame Research Group}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract.tex}
+\end{abstract}
+
+\input{sections/introduction.tex}
+\input{sections/assumptions_and_scope.tex}
+\input{sections/formal_core.tex}
+\input{sections/examples.tex}
+\input{sections/related_work.tex}
+\input{sections/discussion_and_limits.tex}
+\input{sections/conclusion.tex}
+\input{sections/appendix_toy_derivation.tex}
+
+\bibliographystyle{unsrt}
+\bibliography{bib/references}
+
+\end{document}

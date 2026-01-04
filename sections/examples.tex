@@ -1,0 +1,286 @@
+\section{Examples and Applications}
+\label{sec:examples}
+
+The following examples are not proposed as new explanations of irreversibility,
+but as illustrations of how the constraint theorem manifests across domains in
+which the underlying admissible dynamics are widely regarded as symmetric. In
+each case, arrow-like behavior arises only after operational reduction anchored
+at a conditioning boundary.
+
+The purpose of these examples is not to introduce new mechanisms or results, but
+to demonstrate the uniform diagnostic role of conditioning boundaries across
+domains already known to admit symmetric admissible dynamics.
+
+The diagnostic structure of the framework may be summarized schematically as follows.
+
+\begin{figure}[t]
+\centering
+% \resizebox{\columnwidth}{!}{% <--- Uncomment this line to force-fit if still too wide
+\begin{tikzpicture}[
+  font=\footnotesize,
+  % 1. Reduced node distance (vertical and horizontal)
+  node distance=1.0cm and 0.4cm, 
+  >={Stealth[length=2.0mm]},
+  decision/.style={
+    draw, diamond, aspect=1.2,
+    align=center,
+    inner sep=1pt,
+    % 2. Reduced width to fixed cm or smaller fraction (0.22 vs 0.30)
+    text width=3.5cm 
+  },
+  outcome/.style={
+    draw, rounded corners,
+    align=left,
+    inner sep=3pt,
+    % 2. Reduced width to fixed cm or smaller fraction
+    text width=3.5cm 
+  },
+  edge/.style={->, line width=0.6pt} % Slightly thicker for visibility
+]
+
+% Root Node
+\node[decision] (dynamics)
+{Are the admissible dynamics\\time-reversal symmetric?};
+
+% Level 1 Branches
+% Use shifting to manually fine-tune if 'below left' is too aggressive
+\node[outcome, below left=of dynamics, xshift=-0.5cm] (intrinsic)
+{Arrow may be intrinsic\\(separate dynamical explanation).};
+
+\node[decision, below right=of dynamics, xshift=0.5cm] (projection)
+{Is the operational projection\\boundary-symmetric?\\$\Pi \circ \mathcal{R}_B = \Pi$};
+
+% Level 2 Branches (Children of Projection)
+\node[outcome, below left=of projection, xshift=0.5cm] (cut)
+{Asymmetry at the operational cut\\(arrow is cut-induced).};
+
+\node[outcome, below right=of projection, xshift=-0.5cm] (radial)
+{Arrow must be boundary-radial\\(depends only on separation).};
+
+% Edges
+\draw[edge] (dynamics) -- node[midway, above left] {No} (intrinsic.north);
+\draw[edge] (dynamics) -- node[midway, above right] {Yes} (projection.north);
+
+\draw[edge] (projection) -- node[midway, above left] {No} (cut.north);
+\draw[edge] (projection) -- node[midway, above right] {Yes} (radial.north);
+
+\end{tikzpicture}
+\caption{Diagnostic decision procedure implied by Theorem~\ref{thm:projection-induced-arrows}.
+The framework classifies arrow-like directedness by separating intrinsic dynamical asymmetry from projection-induced asymmetry.
+When admissible dynamics are symmetric and the operational reduction is boundary-symmetric, any arrow-like diagnostic in the reduced description must be boundary-radial.
+Adapted from Theorem~\ref{thm:projection-induced-arrows} and the accompanying remarks on boundary symmetry.}
+\label{fig:decision-tree}
+\end{figure}
+
+The following worked examples are included solely to operationalize the diagnostic criterion
+\(\Pi\circ \mathcal{R}_B=\Pi\) and to illustrate, in concrete terms, the distinction between
+projection-induced boundary-radial arrows and cut-introduced asymmetry.
+They are not proposed as new mechanisms for any specific arrow, nor as a boundary-selection principle.
+
+\subsection{Worked diagnostic examples}
+\label{subsec:worked-diagnostic-examples}
+
+\subsubsection{Example A (Boundary-symmetric projection): coarse-grained macrostate in reversible Hamiltonian dynamics}
+\label{sec:exA-thermo}
+
+\paragraph{Setup.}
+Consider a classical Hamiltonian system with microstate \(\Gamma\in\Omega\) (phase space),
+Hamiltonian flow \(\Phi_t:\Omega\to\Omega\), and time-reversal involution
+\(\mathcal{T}:\Omega\to\Omega\) (e.g.\ momentum inversion) satisfying the standard reversibility relation
+\begin{equation}
+\mathcal{T}\circ \Phi_t = \Phi_{-t}\circ \mathcal{T}.
+\label{eq:ham-reversal}
+\end{equation}
+Let the admissible-history space \(\mathcal{H}\) be the set of trajectories
+\(h:\mathbb{R}\to\Omega\) with \(h(t)=\Phi_t(\Gamma_0)\) for admissible initial data \(\Gamma_0\).
+Fix a conditioning boundary \(B\) at parameter value \(\lambda_B=0\), and for this example take
+\(\lambda=t\) (the theorem does not require this choice, but it is convenient for exposition).
+
+Define the boundary-reflection map on histories by
+\begin{equation}
+(\mathcal{R}_B h)(t) \;=\; \mathcal{T}\big(h(-t)\big),
+\label{eq:RB-ham}
+\end{equation}
+i.e.\ reflection about \(t=0\) together with microphysical time reversal.
+
+\paragraph{Operational projection.}
+Let \(\Pi:\mathcal{H}\to\mathcal{D}\) be the coarse-graining map that sends a microtrajectory
+to a macrotrajectory built from a \emph{time-local} macrostate \(M(t)\) defined by a partition
+of phase space into macrocells \(\{C_\alpha\}\). Concretely, define
+\begin{equation}
+M_h(t) \;:=\; \alpha \quad \text{iff}\quad h(t)\in C_\alpha,
+\qquad
+\Pi(h) \;:=\; \big(M_h(t)\big)_{t\in\mathbb{R}}.
+\label{eq:macro-proj}
+\end{equation}
+Assume the macrocells are defined by time-reversal even constraints
+(e.g.\ densities, energies, coarse position bins), so that each macrocell is invariant under \(\mathcal{T}\):
+\begin{equation}
+\mathcal{T}(C_\alpha)=C_\alpha\quad \text{for all }\alpha.
+\label{eq:cell-invariant}
+\end{equation}
+This is the standard situation for thermodynamic macrostates: the coarse variables discard
+microscopic momentum sign structure, phases, and fine correlations.
+
+\paragraph{Verification of boundary symmetry.}
+Using \eqref{eq:RB-ham}--\eqref{eq:cell-invariant}, for any history \(h\) and any \(t\),
+\[
+(\mathcal{R}_B h)(t)=\mathcal{T}(h(-t))\in C_\alpha
+\;\;\Longleftrightarrow\;\;
+h(-t)\in \mathcal{T}^{-1}(C_\alpha)=C_\alpha.
+\]
+Thus \(M_{\mathcal{R}_B h}(t)=M_h(-t)\). If the reduced description \(\mathcal{D}\) is taken to encode
+macro-quantities as \emph{functions of unsigned separation from the boundary} (as is typical when conditioning
+is specified by a preparation at \(t=0\) without recording an absolute orientation tag), then the induced reduced
+macrotrajectory is invariant under boundary reflection. One operationally natural way to state this is:
+\begin{equation}
+\Pi(h)\equiv \Pi(\mathcal{R}_B h)\quad \text{as reduced descriptions anchored at }B,
+\label{eq:PiRB-thermo}
+\end{equation}
+because the coarse macro-information available at separation \(|t|\) from the preparation boundary is identical
+for \(h\) and \(\mathcal{R}_B h\) once oriented departure is not part of the recorded reduced state.\footnote{Equivalently:
+the experimental macro-protocol reports reduced statistics conditioned only on the preparation event at \(B\),
+and does not include an additional variable that labels ``which side'' of the boundary is being traversed.}
+
+This is precisely the boundary-symmetric case of Definition~\ref{def:boundary-symmetric-projection}:
+the operational cut does not retain oriented boundary information.
+
+\paragraph{Boundary-radial diagnostics.}
+Let \(Q:\mathcal{D}\to\mathbb{R}\) be a direction-sensitive macro-diagnostic (e.g.\ coarse-grained entropy,
+distance-to-equilibrium, or a mixing functional). Under \(\Pi\circ\mathcal{R}_B=\Pi\), Lemma~1 applies, so
+\begin{equation}
+\mathbb{E}[Q\circ \Pi]\;=\;F\!\left(\operatorname{sep}(t,0)\right)=F(|t|),
+\label{eq:Qr-thermo}
+\end{equation}
+i.e.\ the diagnostic can vary only with separation from the conditioning boundary. In particular, the special
+case of monotone \(F\) corresponds to familiar one-sided ``relaxation'' narratives once an orientation convention
+is imposed externally, but the theorem itself requires only the boundary-radial dependence.
+
+\paragraph{Operational test.}
+This case admits a direct operational check: prepare the same macro-boundary condition at \(B\) and compare
+reduced statistics at equal separations on either side of the boundary under a protocol that does not record
+an orientation label. Boundary symmetry corresponds to indistinguishability of the reduced statistics for
+boundary-reflected preparations at equal \(\operatorname{sep}(t,0)=|t|\). Failure of such indistinguishability constitutes empirical evidence that the projection is boundary-asymmetric in the sense of Definition~\ref{def:boundary-symmetric-projection}.
+
+\subsubsection{Example B (Boundary-asymmetric projection): retaining an oriented boundary label in the reduced description}
+\label{sec:exB-asym}
+
+\paragraph{Purpose.}
+This example shows how boundary symmetry can fail \emph{even when admissible dynamics remain symmetric},
+and how such failure is classified by the framework as asymmetry introduced at the level of the operational cut.
+The construction is intentionally simple: the reduced description retains an explicit oriented boundary label.
+
+\paragraph{Setup.}
+Let the admissible dynamics and boundary reflection \(\mathcal{R}_B\) be as in Example~A (or any other symmetric
+admissible-history space). Fix the same conditioning boundary \(B\) at \(\lambda_B=0\).
+
+\paragraph{Boundary-asymmetric projection.}
+Define a reduced description \(\mathcal{D}'\) that contains both the coarse macrostate \(M_h(t)\) and an explicit
+\emph{side-of-boundary tag} \(\sigma(t)\in\{+1,-1\}\) indicating the orientation relative to \(B\):
+\begin{equation}
+\sigma(t):=\operatorname{sgn}(t)
+\quad (\sigma(0):=0\ \text{by convention}),\qquad
+\Pi'(h)\;:=\;\big(M_h(t),\sigma(t)\big)_{t\in\mathbb{R}}.
+\label{eq:Pi-prime}
+\end{equation}
+Then, for \(t\neq 0\),
+\[
+\Pi'(h)\neq \Pi'(\mathcal{R}_B h),
+\]
+because \(\sigma(t)\) flips sign under boundary reflection: \(\sigma(t)\mapsto \sigma(-t)=-\sigma(t)\).
+Thus
+\begin{equation}
+\Pi'\circ \mathcal{R}_B \neq \Pi',
+\label{eq:PiRB-fails}
+\end{equation}
+so boundary symmetry fails \emph{by construction at the level of the reduced description}.
+
+\paragraph{Classification.}
+This is not a counterexample to Theorem~\ref{thm:projection-induced-arrows}. It is an instance of the failure mode already described in
+Remark~1: the operational cut preserves oriented boundary information, so the boundary-symmetric theorem
+does not apply. In such cases, any observed directedness can be attributed (in whole or in part) to the
+\emph{asymmetric content of the projection itself} rather than to the admissible dynamics.
+
+\paragraph{Are such projections ``standard''?}
+In many standard physical reduced descriptions, orientation relative to a conditioning boundary is \emph{not}
+encoded as an additional state variable; the reduced description is specified by preparation at \(B\) together
+with statistics as a function of separation from that preparation.
+However, orientation-labeled reductions like \eqref{eq:Pi-prime} can occur in practice whenever an operational
+protocol explicitly records ``before/after'' or ``pre/post'' labels, or when an external clock variable is carried
+into the reduced record as a signed offset from the conditioning event.
+The framework therefore treats such cases as neither pathological nor disallowed: they are simply outside the
+boundary-symmetric class and are classified accordingly.
+
+\paragraph{Operational diagnostic.}
+The same operational criterion applies: if two boundary-reflected preparations yield different reduced statistics
+because the reduced record retains an orientation tag, then \(\Pi\circ\mathcal{R}_B=\Pi\) fails and the arrow-like
+directedness is cut-introduced.
+
+The following domain-specific illustrations can be read as implicit applications of this diagnostic procedure.
+
+\paragraph{Takeaway.}
+Examples~\ref{sec:exA-thermo} and \ref{sec:exB-asym} together make the diagnostic procedure explicit:
+under symmetric admissible dynamics, boundary-radial arrows follow when the operational projection is
+boundary-symmetric, and need not follow when the projection preserves oriented boundary information.
+
+\subsection{Thermodynamic coarse-graining}
+
+Classical statistical mechanics provides canonical instances in which reversible
+microscopic dynamics coexist with macroscopic entropy increase. Hamiltonian
+phase-space flow preserves volume and admits time-reversed trajectories, yet
+coarse-grained descriptions exhibit relaxation toward equilibrium
+\cite{Boltzmann1896,Jaynes1957}.
+
+Within the present framework, the arrow does not attach to the microdynamics but
+to the operational projection defining macrostates. Conditioning boundaries are
+introduced implicitly through preparation procedures, macrostate definitions,
+or coarse-graining anchors. Entropy increase then measures separation from such
+boundaries under the reduced description, rather than intrinsic temporal flow of
+the admissible dynamics.
+
+\subsection{Quantum measurement and decoherence}
+
+In quantum theory, unitary dynamics preserve reversibility at the level of the
+global state, while reduced descriptions obtained by tracing out environmental
+degrees of freedom display decoherence, relaxation, and apparent irreversibility.
+Preparation, factorization, and measurement events naturally serve as conditioning
+boundaries for such reduced descriptions
+\cite{Zurek2003,Schlosshauer2007}.
+
+From the present perspective, decoherence-induced arrows are boundary-radial:
+coherence measures decay as separation from the conditioning boundary increases.
+No intrinsic arrow is attributed to the underlying unitary evolution; directedness
+appears only after projection discards system--environment correlations beyond
+operational resolution.
+
+\subsection{Computational and information-theoretic arrows}
+
+Reversible computation offers a particularly transparent illustration of the
+distinction between admissible dynamics and operational arrows. Classical
+reversible logic gates (e.g.\ Toffoli or Fredkin gates) and unitary quantum circuits
+implement bijective transformations at the admissible level, admitting
+time-reversal symmetry in the relevant sense.
+
+Operational arrows arise only when projections are introduced, most notably
+through measurement, reset, or erasure. Logical erasure is a paradigmatic
+projection: many distinct logical states are mapped to a single standard state,
+discarding logical degrees of freedom. Initialization, reset, or measurement
+events thereby function as conditioning boundaries.
+
+In this setting, apparent computational directedness---progress from input to
+output, information loss, or entropy production in physical implementations---is
+boundary-relative. It attaches to the operational cuts required to obtain usable
+computational states, not to the reversible core dynamics themselves. Landauer-type
+results connect such projections to thermodynamic costs, but the structural origin
+of the arrow lies in the projection and its boundary, not in the admissible logic
+or unitary evolution \cite{Landauer1961}.
+
+\subsection{General diagnostic role of boundaries}
+
+Across these examples, the role of the conditioning boundary is uniform. Changing
+the boundary---for example, by post-selection, reset, or alternative preparation
+protocols---changes the apparent arrow without modifying the underlying admissible
+structure. This highlights the diagnostic utility of the framework: whenever
+arrow-like behavior is observed in a reduced description governed by symmetric
+admissible dynamics, the source of directedness must be traced to the operational
+projection and its anchoring boundary.

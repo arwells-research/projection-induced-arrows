@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: software
+title: "Inevitability of Projection-Induced Arrows"
+authors:
+  - family-names: "Wells"
+    given-names: "A. R."
+email: "arwells.research@proton.me"
+affiliation: "Dual-Frame Research Group"
+license: "CC-BY-4.0"
+repository-code: "https://github.com/arwells-research/projection-induced-arrows"
+abstract: >
+  Foundations note presenting a structural constraint (no-go) theorem: under symmetric
+  admissible dynamics and boundary-symmetric operational reduction, arrow-like diagnostics
+  in reduced descriptions are necessarily boundary-radial (depend only on unsigned separation
+  from a conditioning boundary). The work functions as a diagnostic taxonomy for locating the
+  locus of asymmetry (dynamics, projection, or boundary selection), rather than as a mechanistic
+  model selecting a boundary or generating a specific arrow.
+keywords:
+  - "arrow of time"
+  - "irreversibility"
+  - "coarse-graining"
+  - "operational reduction"
+  - "no-go theorem"
+  - "foundations of physics"
+  - "Boltzmann H-theorem"
+  - "decoherence"
+  - "Landauer principle"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Wells"
+      given-names: "A. R."
+  title: "Inevitability of Projection-Induced Arrows"
+  year: 2026
+  publisher: "Dual-Frame Research Group"
+  notes: "Preprint. See Zenodo record for DOI and version."

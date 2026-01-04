@@ -1,0 +1,27 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+
+# Outputs (prefer Zenodo releases over committing PDFs)
+*.pdf
+
+# If minted is ever used
+_minted*
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

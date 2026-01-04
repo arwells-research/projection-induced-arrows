@@ -1,0 +1,287 @@
+\section{Discussion, Limits, and Extensions}
+
+\subsection{Diagnostic Consequences of the Projection Constraint}
+\label{subsec:diagnostic-consequences}
+
+Theorem~\ref{thm:projection-induced-arrows} functions not as a generative model but as a
+\emph{structural no-go constraint} on admissible explanations of arrow-like directedness.
+This subsection makes explicit several immediate diagnostic consequences.
+These are not additional assumptions or empirical claims, but logical corollaries
+that follow directly from the formal core and classify arrow-like diagnostics by the locus of asymmetry, excluding entire classes of arrow explanations.
+
+\begin{corollary}[Arrow-Origin Classification]
+Any arrow-like diagnostic defined on a reduced description must originate from
+exactly one of the following sources:
+\begin{enumerate}
+\item asymmetry in the admissible dynamics themselves,
+\item asymmetry in the operational projection,
+\item asymmetry introduced by boundary selection.
+\end{enumerate}
+No arrow-like directedness can arise intrinsically from symmetric admissible dynamics
+under boundary-symmetric projection.
+\end{corollary}
+
+\begin{remark}
+This corollary provides a classification scheme rather than a mechanism.
+It partitions arrow explanations by the locus at which asymmetry enters,
+independent of the physical domain under consideration.
+\end{remark}
+
+\begin{remark}[Forced disclosure]
+The structural strictness of the theorem may appear tautological: if direction is excluded
+from the projection, it cannot appear in the diagnostic.
+This apparent tautology is precisely the diagnostic content of the result.
+It compels any account of arrow-like behavior to explicitly identify the specific locus of
+asymmetry it relies upon-whether in the admissible dynamics, the operational cut,
+or the selection of a conditioning boundary-rather than allowing such asymmetry
+to remain implicit or disguised as an emergent feature of symmetric laws.
+\end{remark}
+
+\begin{corollary}[Structural Impossibility of Intrinsic Arrows]
+In the absence of asymmetry in admissible dynamics, projection, or boundary selection,
+direction-sensitive diagnostics on the reduced description are structurally impossible.
+\end{corollary}
+
+\begin{remark}
+This is a no-go constraint in the standard sense:
+a single counterexample---i.e.\ a reduced diagnostic that violates boundary-radial
+dependence while satisfying the assumptions of the theorem---would falsify the result.
+The corollary does not assert that intrinsic arrows never occur, only that their
+existence requires explicit asymmetry.
+\end{remark}
+
+\begin{corollary}[Boundary-Reflection Test]
+\label{cor:boundary-reflection-test}
+If a proposed arrow diagnostic is invariant under boundary reflection at the level of
+the reduced description, then it is necessarily projection-induced and boundary-radial.
+Conversely, any diagnostic that depends on the sign of separation from the boundary
+must violate at least one of the theorem’s assumptions.
+\end{corollary}
+
+\begin{remark}
+This corollary provides an operational test:
+it determines whether an observed arrow reflects intrinsic directional structure
+or is an inevitable artifact of projection and conditioning.
+The theorem therefore constrains \emph{form}, not magnitude or dynamics.
+\end{remark}
+
+\begin{remark}[On Falsifiability]
+Like other structural constraints (e.g.\ no-cloning or Bell-type inequalities),
+the present theorem is falsifiable without being numerically predictive.
+It restricts what forms arrow-like explanations may take, rather than predicting
+specific values or time evolutions.
+\end{remark}
+
+\noindent
+Corollary~\ref{cor:boundary-reflection-test} is operationalized explicitly in
+Examples~\ref{sec:exA-thermo} and~\ref{sec:exB-asym}, where boundary-reflected preparations
+yield indistinguishable reduced statistics under boundary-symmetric projection (Example~A),
+and distinguishable statistics when oriented boundary information is retained in the reduced description (Example~B).
+See Sec.~\ref{subsec:worked-diagnostic-examples} for the concrete operational construction.
+
+Concrete operational realizations of this test are summarized in Box 1.
+
+\paragraph{Falsifiability.}
+Although the present result is a structural constraint rather than a predictive model, it is falsifiable in the standard sense applicable to no-go theorems. The theorem would be falsified by the exhibition of all three of the following conditions simultaneously:
+\begin{enumerate}
+\item \emph{Symmetric admissible dynamics:} an admissible-history space $\mathcal{H}$ equipped with a boundary reflection $\mathcal{R}_B$ such that $\mathcal{R}_B(h)\in\mathcal{H}$ for all $h\in\mathcal{H}$ and $\mathcal{R}_B^2=\mathrm{id}$;
+\item \emph{Boundary-symmetric operational reduction:} an operational projection $\Pi:\mathcal{H}\to\mathcal{D}$ satisfying $\Pi\circ\mathcal{R}_B=\Pi$;
+\item \emph{Oriented reduced diagnostics:} a diagnostic quantity $Q:\mathcal{D}\to\mathbb{R}$ whose expectation value depends on the \emph{sign} of departure from the conditioning boundary, i.e.\ on $\operatorname{sgn}(\lambda(h)-\lambda_B)$,
++where $\operatorname{sgn}$ denotes the sign of the oriented departure,
+where $\operatorname{sgn}$ denotes the sign of the oriented departure rather than solely on the unsigned separation $\operatorname{sep}(\lambda(h),\lambda_B)$.
+\end{enumerate}
+The existence of such a case would demonstrate intrinsically oriented arrow-like behavior emerging from symmetric admissible dynamics under boundary-symmetric operational reduction, thereby directly contradicting Theorem~\ref{thm:projection-induced-arrows}. To our knowledge, no such counterexample has been identified in thermodynamic, quantum, or computational settings.
+
+\paragraph{Interpretive remark.}
+This falsifiability criterion clarifies the empirical content of the framework: the theorem does not preclude the existence of arrows, but restricts the circumstances under which they may arise. Any observed direction-sensitive diagnostic must therefore be traceable to a verifiable failure of at least one of the stated assumptions-through intrinsic dynamical asymmetry, boundary-asymmetric projection, or explicit boundary-selection principles.
+
+\subsection{Diagnostic Application: Boltzmann’s H-Theorem}
+\label{sec:diagnostic-h-theorem}
+
+Textbook treatments of the Boltzmann H-theorem commonly present entropy increase as a
+consequence of purely mechanical dynamics. In a standard formulation, the Boltzmann
+equation-together with Liouville’s theorem-is taken to imply monotonic decrease of the
+functional $H=\int f\ln f\,d\Gamma$, thereby demonstrating irreversible approach to
+equilibrium despite underlying time-reversal symmetric microdynamics
+(e.g.\ \citep[Sec.~1.4]{Pathria2011}).
+
+At face value, this presentation suggests that arrow-like directedness emerges from
+symmetric admissible dynamics through statistical reasoning alone. The present framework
+allows this claim to be examined diagnostically by identifying the locus at which
+directional asymmetry enters.
+
+\paragraph{Admissible dynamics and projection.}
+At the microscopic level, the admissible dynamics are Hamiltonian and time-reversal
+symmetric: for every admissible trajectory in phase space, the momentum-reversed
+trajectory is also admissible. The reduced description is provided by the single-particle
+distribution function $f(\mathbf{r},\mathbf{p},t)$, obtained by projecting the full
+$N$-particle distribution onto one-particle marginals. This projection discards
+higher-order correlations and is fixed relative to the reduced description.
+
+\paragraph{Implicit boundary asymmetry.}
+A crucial ingredient in the derivation of the Boltzmann equation is the molecular chaos
+assumption (Stosszahlansatz), which asserts that particle velocities are uncorrelated
+\emph{prior} to collision. This assumption is imposed at a chosen reference time and
+propagated forward under the kinetic equation. Importantly, no corresponding assumption is
+made about the absence of correlations after collision.
+
+From the standpoint of admissible histories, this asymmetry does not arise from the
+Hamiltonian dynamics themselves, nor from the coarse-graining projection as such. Rather,
+it reflects a privileged treatment of correlations relative to a conditioning boundary:
+correlations are constrained on one side of the boundary (before collision or at an
+initial reference time) but not on the other.
+
+\paragraph{Boundary-reflection diagnostic.}
+Applying the operational test articulated in Sec.~\ref{subsec:diagnostic-consequences}, one
+may ask whether boundary-reflected preparations-obtained by reversing momenta and
+correlations at the conditioning boundary-yield indistinguishable reduced statistics under
+the same projection. In the presence of the molecular chaos assumption, they do not: the
+Boltzmann equation itself fails to be invariant under such reflection because the
+assumption singles out a direction of correlation propagation.
+
+Accordingly, the condition $\Pi\circ\mathcal{R}_B=\Pi$ does not hold for the kinetic
+description used in the H-theorem derivation. The arrow-like behavior diagnosed by the
+monotonic decrease of $H$ therefore does not arise from boundary-symmetric projection acting
+on symmetric admissible dynamics.
+
+\paragraph{Classification.}
+Within the present taxonomy, the H-theorem exemplifies a case of \emph{boundary-selection
+asymmetry}. The entropy increase it describes is boundary-radial relative to a specific
+conditioning choice-low correlations at the reference boundary-but this boundary is not
+fixed or selected by the mechanical dynamics alone. Claims that the H-theorem derives
+irreversibility purely from symmetric mechanics must therefore be understood as incomplete:
+a boundary-selection principle is structurally required.
+
+\paragraph{Corrected statement.}
+A formulation consistent with the present framework is the following: given symmetric
+Hamiltonian dynamics and a boundary condition imposing low correlations at a reference
+boundary, entropy increases away from that boundary under the Boltzmann equation. The arrow
+thus reflects the imposed boundary asymmetry rather than an intrinsic directionality of the
+admissible dynamics.
+
+\begin{center}
+\fbox{
+\begin{minipage}{0.95\linewidth}
+\textbf{Box 1: Operational Tests for Boundary-Symmetric Projection}
+
+\vspace{0.5em}
+
+The boundary-symmetry condition $\Pi \circ \mathcal{R}_B = \Pi$ is not a matter of
+representation, but of operational indistinguishability. The following table
+summarizes concrete experimental protocols for assessing boundary symmetry across
+domains.
+
+\vspace{0.5em}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{tabularx}{\linewidth}{|P{2.9cm}|P{2.9cm}|Y|Y|}
+\hline
+\textbf{Domain} &
+\textbf{Conditioning Boundary $B$} &
+\textbf{Forward Protocol} &
+\textbf{Boundary-Reflected Protocol} \\
+\hline
+
+Classical Statistical Mechanics &
+Preparation at $t=0$ &
+Prepare macrostate $M$, evolve to $t=+\tau$, measure macro-variables &
+Prepare $M$ with momentum-reversed microstates, evolve to $t=-\tau$, measure macro-variables \\
+\hline
+
+Quantum Decoherence &
+System--environment factorization &
+Prepare $\rho_S\otimes\rho_E$, evolve unitarily, trace over environment &
+Prepare time-reversed joint state, evolve under reversed Hamiltonian, trace over environment \\
+\hline
+
+Reversible Computation &
+Memory initialization &
+Initialize register, execute circuit, record output &
+Reverse circuit without output recording (output readout itself defines a boundary) \\
+\hline
+\end{tabularx}
+
+\vspace{0.5em}
+
+If the reduced statistics obtained from the forward and boundary-reflected protocols
+are indistinguishable, the operational projection is boundary-symmetric.
+Failure of indistinguishability constitutes empirical evidence that oriented boundary
+information is retained by the projection.
+\end{minipage}
+}
+\end{center}
+
+\subsection{Boundary Selection as a Structural Constraint}
+
+The present framework does not propose a mechanism for the selection of a
+conditioning boundary. This is a deliberate restriction rather than a gap, and
+reflects the paper’s aim to isolate structural necessity from contingent physical
+or cosmological inputs. The contribution of the theorem is to isolate boundary
+selection as a distinct explanatory axis: any account of arrow-like directedness
+must either (i) posit intrinsic asymmetry in the admissible dynamics, or (ii)
+supply a boundary-selection principle explaining why a particular conditioning
+boundary is physically realized. Hybrid accounts that appeal to
+projection-induced irreversibility while implicitly privileging a boundary are
+thereby rendered conceptually explicit.
+
+In this sense, the framework does not relocate the arrow problem arbitrarily, but
+forces a sharp separation between the \emph{origin of directedness} (projection
+relative to a boundary) and the \emph{origin of boundary selection}. Clarifying
+this separation is itself a form of explanatory progress: it prevents asymmetric
+assumptions from being silently imported into accounts that otherwise appeal only
+to symmetric dynamics and operational reduction, and it prevents conflation of
+structural necessity with contingent physical, cosmological, or pragmatic
+conditions.
+
+Related discussions of boundary selection and its explanatory role appear, for example,
+in analyses of the Past Hypothesis and in broader treatments of temporal arrows
+\cite{Wallace2010,Carroll2010}; the present result is orthogonal to such accounts,
+constraining admissible forms of arrow explanations without proposing a selection principle.
+
+Boundary-selection principles-cosmological, dynamical, pragmatic, or observer-
+relative-may therefore be introduced as orthogonal inputs without altering the
+structural result established here. Such principles determine which boundary is
+realized; they do not, by themselves, explain why reduced descriptions exhibit
+arrow-like diagnostics once conditioning is imposed.
+
+\subsection{Limits of applicability}
+
+The results of this paper rely on two core assumptions: symmetric admissible
+dynamics and information-losing operational reduction. If primary admissible
+dynamics violate time-reversal symmetry, the theorem does not apply as stated.
+In that regime, the framework nevertheless retains diagnostic value by sharply
+separating intrinsic asymmetry in the dynamics from projection-induced
+asymmetry in reduced descriptions.
+
+Known violations of time-reversal symmetry in the weak interaction (e.g.\ neutral meson systems)
+are classified within this framework as \emph{intrinsic dynamical asymmetries}.
+Their existence constitutes a failure of the symmetry assumption for that specific sector,
+but does not alter the present constraint on arrows arising in effective sectors
+(thermodynamic, computational) where admissible dynamics are symmetric.
+
+Similarly, if an operational description preserves directional information by
+construction-by encoding asymmetry directly into the operational projection
+itself-then boundary-radial behavior need not follow. Such cases fall outside the
+scope of the present analysis, which is restricted to projections that treat
+admissible histories symmetrically relative to the conditioning boundary.
+
+By contrast, objective collapse models (e.g.\ GRW, Penrose) fall outside the boundary-symmetric
+class considered here by positing intrinsically time-asymmetric, non-unitary admissible dynamics.
+They are thereby classified as introducing arrows at the dynamical level (Type~1),
+distinct from the projection-induced arrows (Type~2) that characterize standard quantum
+measurement and decoherence accounts.
+
+\subsection{Extensions and future directions}
+
+Potential extensions of the framework follow naturally from its diagnostic
+character: once arrow-like quantities are understood as measures of separation
+from a conditioning boundary, information-theoretic and geometric generalizations
+become especially natural. Such extensions include explicit
+formulations of diagnostic quantities in information-theoretic terms (e.g.\ mutual information relative to a conditioning boundary), as well as applications to 
+gravitational or causal horizons treated as operational boundaries. These directions may be pursued without relaxing the minimal assumptions that underwrite the present constraint theorem.
+
+We note that if the global spacetime manifold itself lacks a reflection symmetry
+due to topological constraints-e.g.\ differing initial and final singularity structures-
+this constitutes an intrinsic asymmetry of the admissible histories, placing it
+outside the boundary-symmetric class constrained here.

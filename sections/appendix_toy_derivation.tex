@@ -1,0 +1,123 @@
+% ============================================================
+% Appendix A: Explicit Toy Derivation (Boundary-Radiality)
+% Purpose: make Lemma 1 visibly derivational, not definitional.
+% ============================================================
+
+\appendix
+\section{Explicit Toy Derivation of Boundary-Radiality}
+\label{app:toy-derivation}
+
+This appendix provides a minimal derivation illustrating how boundary-radial dependence follows
+from (i) symmetric admissible dynamics and (ii) an information-losing operational projection
+anchored at a conditioning boundary. No physical assumptions are used; the construction is
+purely structural. The point is not to model any particular arrow, but to make explicit why
+direction-sensitive diagnostics on a reduced description cannot survive boundary-reflection
+identification.
+
+\subsection{Setup: admissible histories, boundary reflection, projection}
+
+Let $\mathcal{H}$ be a finite set of admissible histories. No preferred ordering or parameter is assumed
+at this level; $\mathcal{H}$ is simply the admissible-history space.
+
+Fix a conditioning boundary $B$ and assume the admissible structure admits an involutive
+\emph{boundary reflection} (pairing) map
+\begin{equation}
+\mathcal{R}_B : \mathcal{H} \to \mathcal{H}, \qquad \mathcal{R}_B^2 = \mathrm{id}.
+\end{equation}
+Intuitively, $R_B$ pairs each admissible history with the history obtained by reflecting
+its admissible realization with respect to the boundary condition $B$ (as defined in
+Sec.~\ref{sec:formal-core}). The only property required here is involution.
+
+Let $\Pi$ be an operational projection to a reduced description space $\mathcal{D}$,
+\begin{equation}
+\Pi : \mathcal{H} \to \mathcal{D} \equiv \Pi(\mathcal{H}),
+\end{equation}
+assumed to be \emph{boundary-symmetric} in the sense of Sec.~\ref{sec:formal-core}:
+\begin{equation}
+\Pi \circ \mathcal{R}_B = \Pi .
+\label{eq:toy-boundary-sym}
+\end{equation}
+Equation~\eqref{eq:toy-boundary-sym} is the formal expression of the idea that the reduced
+description identifies boundary-reflected admissible histories: operationally, histories
+related by $\mathcal{R}_B$ are indistinguishable after projection.
+
+Finally, let $Q$ be any diagnostic defined purely on the reduced description:
+\begin{equation}
+Q : \mathcal{D} \to \mathbb{R}.
+\end{equation}
+The diagnostic may be interpreted as ``arrow-like'' only insofar as it is direction-sensitive
+at the reduced level; this appendix shows that such sensitivity cannot depend on the sign of
+separation from the boundary.
+
+\subsection{Minimal example: explicit pairing and identification}
+
+Consider the smallest nontrivial case where boundary reflection produces nontrivial pairings:
+\begin{equation}
+\mathcal{H} = \{h_1, h_2, h_3, h_4\}.
+\end{equation}
+Define an involution $R_B$ by pairing histories into two reflected pairs:
+\begin{equation}
+\mathcal{R}_B(h_1)=h_2,\quad \mathcal{R}_B(h_2)=h_1,\qquad
+\mathcal{R}_B(h_3)=h_4,\quad \mathcal{R}_B(h_4)=h_3.
+\label{eq:toy-involution}
+\end{equation}
+Let the projection $\Pi$ identify each reflected pair:
+\begin{equation}
+\Pi(h_1)=\Pi(h_2)=d_A,\qquad
+\Pi(h_3)=\Pi(h_4)=d_B,
+\label{eq:toy-projection}
+\end{equation}
+so that $\mathcal{D}=\{d_A,d_B\}$ and $\Pi \circ \mathcal{R}_B = \Pi$ holds identically.
+
+\subsection{Derivation: invariance of reduced diagnostics under boundary reflection}
+
+Using only the boundary-symmetry condition~\eqref{eq:toy-boundary-sym}, for any $h\in \mathcal{H}$ we have
+\begin{equation}
+\Pi(h) = \Pi(\mathcal{R}_B h).
+\end{equation}
+Applying any reduced diagnostic $Q$ yields
+\begin{equation}
+Q(\Pi(h)) = Q(\Pi(\mathcal{R}_B h)).
+\label{eq:toy-diagnostic-invariance}
+\end{equation}
+In the explicit example~\eqref{eq:toy-involution}--\eqref{eq:toy-projection},
+Eq.~\eqref{eq:toy-diagnostic-invariance} reads
+\begin{equation}
+Q(d_A)=Q(\Pi(h_1))=Q(\Pi(h_2)), \qquad
+Q(d_B)=Q(\Pi(h_3))=Q(\Pi(h_4)),
+\end{equation}
+i.e.\ the diagnostic cannot distinguish members within a boundary-reflected pair.
+
+\subsection{From invariance to boundary-radiality}
+
+To connect the above invariance to the boundary-radial form used in Lemma~1, introduce any
+parameter structure $(\mathcal{S}, \mathrm{sep}, \lambda_B)$ in the sense of
+Sec.~\ref{sec:formal-core}, where $\lambda$ is a parametrization along histories and
+$\mathrm{sep}(\lambda,\lambda_B)\ge 0$ is the induced unsigned separation from the boundary
+value $\lambda_B$. Boundary reflection acts by sign reversal around $\lambda_B$:
+\begin{equation}
+R_B : \lambda \mapsto \lambda' \ \ \text{with}\ \ \lambda' - \lambda_B = -(\lambda - \lambda_B),
+\end{equation}
+so that
+\begin{equation}
+\mathrm{sep}(\lambda,\lambda_B)=\mathrm{sep}(\lambda',\lambda_B).
+\label{eq:toy-sep-invariant}
+\end{equation}
+Boundary-symmetry of $\Pi$ implies that any reduced observable or diagnostic is constant on
+$\mathcal{R}_B$-orbits, i.e.\ depends only on the equivalence class $[h]=\{h, \mathcal{R}_B h\}$.
+By Eq.~\eqref{eq:toy-sep-invariant}, the most general dependence compatible with this
+identification is therefore a function of the \emph{unsigned} separation:
+\begin{equation}
+Q(\Pi(h)) = f\!\left(\mathrm{sep}(\lambda(h),\lambda_B)\right)
+\end{equation}
+for some function $f$ (possibly piecewise, depending on the coarse equivalence classes induced
+by $\Pi$). In particular, no diagnostic definable on $D$ can depend on the \emph{sign} of
+$\lambda-\lambda_B$ without violating $\Pi\circ \mathcal{R}_B=\Pi$.
+
+\subsection{Interpretive remark (structural, not mechanistic)}
+
+The conclusion is purely structural: whenever an information-losing projection identifies
+boundary-reflected admissible histories, direction-sensitive diagnostics on the reduced
+description cannot encode an intrinsic ``which-way'' dependence. Any arrow-like directedness
+visible after projection must be boundary-radial, i.e.\ indexed only by separation from the
+conditioning boundary. This is the toy instantiation of Lemma~1 in Sec.~\ref{sec:formal-core}.

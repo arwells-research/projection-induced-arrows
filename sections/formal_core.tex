@@ -1,0 +1,242 @@
+\section{Formal Core}
+\label{sec:formal-core}
+
+\subsection{Definitions}
+
+\begin{definition}[Primary Admissible Dynamics]
+Let $\mathcal{H}$ denote the set of admissible histories (trajectories) of a system,
+determined by fixed constraints or laws. Elements $h \in \mathcal{H}$ are taken as
+ontologically primary. No preferred parametrization, ordering, or temporal notion is
+assumed at this level.
+\end{definition}
+
+\begin{definition}[Parametrization]
+A parametrization is a mapping $\lambda: h \mapsto \lambda(h)$ that assigns an ordering
+coordinate to points along a history $h$. Different parametrizations (temporal, spatial,
+affine, relational, etc.) are coordinate choices on the same admissible structure. No
+parametrization is privileged \emph{a priori}.
+\end{definition}
+
+\begin{definition}[Parameter Structure]
+A parametrization $\lambda$ induces a parameter space $\mathcal{S}$ equipped with
+sufficient structure to define separation from a reference value $\lambda_B$ (e.g.\ a
+metric, or a topology plus ordering relation sufficient to define neighborhoods and
+separation). No physical interpretation of $\lambda$ or $\mathcal{S}$ is assumed.
+\end{definition}
+
+\noindent
+In what follows, we use a separation function $\operatorname{sep}:\mathcal{S}\times\mathcal{S}\to \mathbb{R}_{\ge 0}$ with minimal properties:
+$\operatorname{sep}(x,y)=\operatorname{sep}(y,x)$ and $\operatorname{sep}(x,x)=0$.
+No metric structure is assumed unless specified by the application.
+The separation function is used only to represent unsigned separation from the conditioning boundary; it is not assumed to encode causal order, temporal flow, or a privileged direction.
+
+\begin{definition}[Time-Reversal Symmetry of the Admissible Structure]
+The admissible structure $\mathcal{H}$ is time-reversal symmetric if there exists an
+involutive map $\mathcal{R}: \mathcal{H}\rightarrow\mathcal{H}$ such that for every
+admissible history $h$, the reversed history $\mathcal{R}(h)$ is also admissible.
+This symmetry is local and does not presuppose global cosmological boundary conditions.
+\end{definition}
+
+\begin{definition}[Boundary Reflection]
+Fix a conditioning boundary $B$ and a parametrization $\lambda$ with boundary label $\lambda_B$.
+Define the boundary-reflection map $\mathcal{R}_B:\mathcal{H}\to\mathcal{H}$ to be a reversal
+about $B$ in the chosen parametrization, i.e.\ the admissible history obtained by composing
+time-reversal $\mathcal{R}$ with the parameter reflection $\lambda\mapsto 2\lambda_B-\lambda$
+on the history. In standard physical instantiations, $\mathcal{R}_B$ corresponds to the usual
+reversal (e.g.\ momentum inversion / antiunitary conjugation) together with reversal of the
+chosen ordering coordinate about the boundary.
+\end{definition}
+
+
+\begin{definition}[Operational Reduction / Projection]
+An operational description is obtained via a projection $\Pi:\mathcal{H}\rightarrow\mathcal{D}$,
+where $\mathcal{D}$ is a reduced description (effective states, marginals, observables,
+or reduced dynamics). The projection $\Pi$ necessarily discards relational information
+present in $\mathcal{H}$, is fixed relative to the reduced description, and is blind to
+microscopic correlations beyond its resolution. While the representation within
+$\mathcal{D}$ (e.g.\ a preferred basis) may depend on dynamical context, the information-discarding content of $\Pi$ does not.
+\end{definition}
+
+The claim that the information-discarding content of $\Pi$ is fixed should be
+understood in a structural rather than dynamical sense. A projection $\Pi$
+defines an equivalence relation over admissible histories, identifying those
+differences that are inaccessible to the reduced description. While the
+representational form of the reduced variables (e.g., a preferred basis or set
+of observables) may depend on dynamical or contextual factors, the equivalence
+classes induced by $\Pi$-that is, which distinctions are treated as
+operationally irrelevant-remain invariant. Context determines which histories
+are realized within these classes, not which distinctions are discarded.
+Dynamical laws determine which histories belong to $\mathcal{H}$, whereas the
+projection $\Pi$ determines how distinctions among those histories are treated in
+the reduced description; these roles are conceptually distinct.
+
+\begin{definition}[Conditioning Boundary]
+A conditioning boundary $B$ is the reference relative to which the reduced description
+$\Pi(h)$ is defined (preparation/factorization events, coarse-graining anchors, reset or
+conditioning protocols). $B$ is not assumed to be a physical beginning or end of time.
+This work does not propose a selection principle for $B$; it establishes constraints that
+hold given any such choice.
+\end{definition}
+
+\begin{definition}[Boundary-Symmetric Projection]\label{def:boundary-symmetric-projection}
+The projection $\Pi$ is \emph{boundary-symmetric} (relative to $B$ and $\lambda$) if it does not
+distinguish a history from its boundary-reflected counterpart, i.e.
+\[
+\Pi\circ \mathcal{R}_B = \Pi.
+\]
+Equivalently, $\Pi$ identifies each history $h$ and its boundary reflection $\mathcal{R}_B(h)$
+as operationally indistinguishable in $\mathcal{D}$.
+\end{definition}
+
+\noindent
+Definition~\ref{def:boundary-symmetric-projection} is not a definition of operational projection in general.
+It specifies a verifiable subclass of reductions for which the present constraint applies.
+When boundary symmetry fails, arrow-like directedness is classified as asymmetry introduced at the level of the operational projection rather than as a feature of the admissible dynamics.
+
+\begin{remark}[Locus of asymmetry]
+Throughout this work, the \emph{locus of asymmetry} refers to the stage at which directional asymmetry enters an account of arrow-like directedness: the admissible dynamics, the operational projection, or the selection of a conditioning boundary.
+The theorem constrains how arrows may arise by exhaustively classifying these loci.
+\end{remark}
+
+\subsection{Lemmas and Theorem}
+
+By a direction-sensitive diagnostic we mean any function on $\mathcal{D}$ whose values
+would distinguish opposite orientations of departure from a conditioning boundary if such
+orientation information were available.
+
+\begin{lemma}[Boundary-Reflection Invariance of Reduced Diagnostics]
+\label{lem:boundary-invariance}
+
+Let $\mathcal{H}$ be an admissible-history space equipped with a boundary reflection
+$\mathcal{R}_B:\mathcal{H}\to\mathcal{H}$ satisfying $\mathcal{R}_B^2=\mathrm{id}$.
+Let $\Pi:\mathcal{H}\to\mathcal{D}$ be an operational projection that is
+boundary-symmetric, i.e.
+\[
+\Pi\circ\mathcal{R}_B=\Pi.
+\]
+Then for any diagnostic quantity $Q:\mathcal{D}\to\mathbb{R}$ defined on the reduced
+description, the composed diagnostic $Q\circ\Pi$ is invariant under boundary reflection:
+\[
+(Q\circ\Pi)(h)=(Q\circ\Pi)(\mathcal{R}_B h)
+\qquad\text{for all }h\in\mathcal{H}.
+\]
+\end{lemma}
+
+\begin{proof}
+Since $Q$ is a function on $\mathcal{D}$, it is constant on the equivalence classes
+induced by $\Pi$. Boundary symmetry implies $\Pi(h)=\Pi(\mathcal{R}_B h)$ for all
+$h\in\mathcal{H}$. Therefore,
+\[
+(Q\circ\Pi)(h)=Q(\Pi(h))=Q(\Pi(\mathcal{R}_B h))=(Q\circ\Pi)(\mathcal{R}_B h),
+\]
+establishing boundary-reflection invariance.
+\end{proof}
+
+Hereafter, we refer to $\operatorname{sep}(\lambda(h),\lambda_B)$ simply as the
+\emph{separation from the conditioning boundary}.
+
+\begin{remark}[Interpretive scope of Lemma~\ref{lem:boundary-invariance}]
+Lemma~\ref{lem:boundary-invariance} establishes only invariance under boundary
+reflection. It does not, by itself, fix the functional form of reduced diagnostics.
+Boundary-radial dependence follows only under the additional empirical assumption
+that reduced statistics are operationally indexed by separation from the conditioning
+boundary, as made explicit in Corollary~\ref{cor:boundary-radial}.
+\end{remark}
+
+\begin{corollary}[Boundary-Radial Representation of Reduced Diagnostics]
+\label{cor:boundary-radial}
+
+Assume in addition that the operational protocol indexes reduced diagnostics
+by separation from the conditioning boundary, i.e.\ that experimental or
+computational statistics are recorded as functions of an unsigned separation
+parameter
+$\operatorname{sep}(\lambda(h),\lambda_B)\ge 0$ associated with a parametrization
+$\lambda$ and boundary value $\lambda_B$.
+
+Under this assumption, any reduced diagnostic admits a boundary-radial representation:
+\[
+\mathbb{E}[Q\circ\Pi]
+=
+F\!\left(\operatorname{sep}(\lambda(h),\lambda_B)\right)
+\]
+for some (not necessarily unique) function $F$ determined by the projection and diagnostic.
+\end{corollary}
+
+\begin{remark}
+This corollary does not assert that all reduced diagnostics universally take a
+boundary-radial form. It states that whenever the reduced description is operationally
+indexed by separation from a conditioning boundary-as is standard in thermodynamic,
+decoherence, and relaxation contexts-boundary-reflection invariance implies dependence
+only on unsigned separation. Diagnostics may still depend on other boundary-invariant
+features retained by $\Pi$.
+\end{remark}
+
+\begin{remark}[Lemma remark: when boundary-radiality can fail]
+Boundary-radial dependence is guaranteed only under boundary-symmetric operational reduction, i.e.\ when $\Pi\circ\mathcal{R}_B=\Pi$.
+If a reduced description preserves oriented information, this corresponds to a \emph{verifiable} failure of boundary symmetry:
+there exist admissible histories $h$ such that $\Pi(h)\neq \Pi(\mathcal{R}_B(h))$.
+Such cases are not dismissed; they are classified as instances where asymmetry is introduced at the level of the operational cut.
+The present theorem does not apply to those projections.
+\end{remark}
+
+\begin{remark}[Lemma remark: monotonic and oscillatory behavior]
+Monotonic behavior (e.g.\ entropy increase) is the special case in which $F$ is monotone.
+Oscillatory or cyclic microdynamics may still yield boundary-radial envelopes (e.g.\ decay
+of coherence measures) in the reduced description.
+\end{remark}
+
+\begin{lemma}[Impossibility of Intrinsic Directionality]
+No reduced description $\Pi(\mathcal{H})$ can exhibit a unique intrinsic arrow---direction-dependent
+behavior not reducible to boundary separation---unless an additional directional asymmetry
+is explicitly introduced (e.g.\ privileging one side of $B$, asymmetric coarse-graining,
+restricted parameter domains, or boundary-selection principles).
+\end{lemma}
+
+\begin{remark}[Theorem remark: spontaneous symmetry breaking]
+If admissible dynamics are symmetric but individual solutions are not, selection of a
+particular asymmetric solution (e.g.\ phase selection across quantum or classical phase transitions)
+functions as a boundary-selection principle in the present
+sense. This does not deny dynamical realization of symmetry breaking; it asserts that
+arrow-like directedness attaches to the conditioned description in which a particular branch
+or solution is selected, and is therefore boundary-relative rather than intrinsic to
+the admissible structure $\mathcal{H}$ itself.
+\end{remark}
+
+\begin{theorem}[Inevitability of Projection-Induced Arrows]
+\label{thm:projection-induced-arrows}
+Given primary admissible dynamics, absence of privileged parametrization, time-reversal
+symmetry of the admissible structure, operational reduction via projection, and a
+conditioning boundary, any arrow-like behavior in the reduced description is necessarily
+a consequence of projection relative to the conditioning boundary and not a property of
+the primary dynamics.
+\end{theorem}
+
+\begin{remark}[Theorem remark: falsifiability and diagnostic role]
+The theorem is not predictive in the sense of yielding novel numerical forecasts,
+but it is falsifiable as a structural claim. It would be refuted by the
+demonstration of a reduced operational description exhibiting a unique intrinsic
+arrow \emph{while} (i) admissible dynamics are symmetric and (ii) operational reduction is
+boundary-symmetric in the sense that $\Pi\circ\mathcal{R}_B=\Pi$ holds.
+Operationally, boundary symmetry may be assessed by whether boundary-reflected preparations yield indistinguishable reduced statistics under the projection defining $\mathcal{D}$.
+Conversely, empirical evidence for
+fundamental time-asymmetry would not invalidate the result, but would relocate the
+arrow from the projection-induced class to the intrinsic-asymmetry class. In this
+way, the framework functions as a diagnostic tool for classifying the source of
+observed directedness.
+\end{remark}
+
+\begin{remark}[Scope of Explanation]
+The theorem constrains the form that arrow explanations must take under the stated premises.
+It does not select a unique conditioning boundary, nor explain why a particular boundary is realized.
+\end{remark}
+
+\begin{corollary}[Non-Privileging of Time]
+No theory satisfying the above assumptions can ontologically privilege time over other
+parametrizations. Any such privileging arises from boundary choice, reduction rules,
+or interpretive conventions applied after projection.
+\end{corollary}
+
+This claim does not deny that particular parametrizations (such as proper time in
+general relativity) may be dynamically natural or geometrically distinguished
+within specific theories; it denies that such parametrizations alone can ground
+intrinsic arrow-like directedness absent additional asymmetric structure. Geometric distinction of timelike directions by itself does not supply an oriented arrow without an accompanying asymmetry or boundary-relative conditioning.
