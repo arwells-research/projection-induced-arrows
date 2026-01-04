@@ -1,37 +1,47 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-type: software
-title: "Inevitability of Projection-Induced Arrows"
+type: article
+title: "Inevitability of Projection-Induced Arrows: Arrow-Like Directedness as Boundary-Radial Fallout of Symmetric Admissible Dynamics"
+
 authors:
   - family-names: "Wells"
     given-names: "A. R."
-email: "arwells.research@proton.me"
-affiliation: "Dual-Frame Research Group"
-license: "CC-BY-4.0"
-repository-code: "https://github.com/arwells-research/projection-induced-arrows"
+    email: "arwells.research@proton.me"
+    affiliation: "Dual-Frame Research Group"
+
 abstract: >
-  Foundations note presenting a structural constraint (no-go) theorem: under symmetric
+  Foundations paper presenting a structural constraint (no-go) theorem: under symmetric
   admissible dynamics and boundary-symmetric operational reduction, arrow-like diagnostics
-  in reduced descriptions are necessarily boundary-radial (depend only on unsigned separation
-  from a conditioning boundary). The work functions as a diagnostic taxonomy for locating the
-  locus of asymmetry (dynamics, projection, or boundary selection), rather than as a mechanistic
-  model selecting a boundary or generating a specific arrow.
+  in reduced descriptions are necessarily boundary-radial, depending only on unsigned
+  separation from a conditioning boundary. The result functions as a diagnostic taxonomy
+  for locating the locus of asymmetry (dynamics, projection, or boundary selection), rather
+  than as a mechanistic model selecting a boundary or generating a specific arrow.
+
 keywords:
-  - "arrow of time"
-  - "irreversibility"
-  - "coarse-graining"
-  - "operational reduction"
-  - "no-go theorem"
-  - "foundations of physics"
-  - "Boltzmann H-theorem"
-  - "decoherence"
-  - "Landauer principle"
+  - arrow of time
+  - irreversibility
+  - coarse-graining
+  - operational reduction
+  - no-go theorem
+  - foundations of physics
+  - Boltzmann H-theorem
+  - decoherence
+  - Landauer principle
+
+license: "CC-BY-4.0"
+
+repository-code: "https://github.com/arwells-research/projection-induced-arrows"
+
+doi: "10.5281/zenodo.18143356"
+
+date-released: 2026-01-01
+
 preferred-citation:
   type: article
   authors:
     - family-names: "Wells"
       given-names: "A. R."
-  title: "Inevitability of Projection-Induced Arrows"
+  title: "Inevitability of Projection-Induced Arrows: Arrow-Like Directedness as Boundary-Radial Fallout of Symmetric Admissible Dynamics"
   year: 2026
-  publisher: "Dual-Frame Research Group"
-  notes: "Preprint. See Zenodo record for DOI and version."
+  publisher: "Zenodo"
+  doi: "10.5281/zenodo.18143356"

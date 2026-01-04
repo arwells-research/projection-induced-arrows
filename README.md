@@ -1,4 +1,6 @@
-# Projection-Induced Arrows as a Structural Constraint
+# Inevitability of Projection-Induced Arrows  
+## Projection-Induced Arrows as a Structural Constraint
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18143356.svg)](https://doi.org/10.5281/zenodo.18143356)
 
 **Author:** A. R. Wells  
 **Affiliation:** Dual-Frame Research Group  
@@ -12,7 +14,7 @@
 
 This repository hosts the LaTeX source for the paper:
 
-**“Projection-Induced Arrows as a Structural Constraint”**
+**“Inevitability of Projection-Induced Arrows: Arrow-Like Directedness as Boundary-Radial Fallout of Symmetric Admissible Dynamics”**
 
 The paper presents a **constraint (no-go) theorem**: under **time-reversal symmetric admissible dynamics** and **boundary-symmetric operational reduction**, any arrow-like diagnostic in the reduced description must be **boundary-radial**—depending only on **unsigned separation** from a conditioning boundary, not on an intrinsic temporal orientation.
 
@@ -58,7 +60,8 @@ Optional: use the helper script (if you prefer):
 - `tools/` — helper scripts
 - `notes/` — working notes / review logs (optional)
 
-Build artifacts (`*.aux`, `*.bbl`, `*.log`, `*.pdf`, etc.) are currently present in-repo; you may wish to add them to `.gitignore` depending on your publication workflow.
+Build artifacts are not considered part of the scholarly record; the LaTeX source
+and Zenodo DOI constitute the authoritative version.
 
 ---
 
@@ -72,7 +75,7 @@ Build artifacts (`*.aux`, `*.bbl`, `*.log`, `*.pdf`, etc.) are currently present
 
 ## How to cite
 
-Once a Zenodo release exists, cite the corresponding DOI.
+Cite the corresponding Zenodo DOI for the version used.
 
 Recommended repo additions:
 - `CITATION.cff`
